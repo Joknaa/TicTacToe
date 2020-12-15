@@ -1,6 +1,6 @@
 ﻿namespace Model
 {
-    public enum GameState {
+    public enum GameStateEnum {
         Playing,
         Draw,
         XWin,

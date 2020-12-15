@@ -9,7 +9,6 @@ public class SignalListener : MonoBehaviour
     public void OnSignalRaised()
     {
         SignalEvent.Invoke();
-        print("Signal Raised !!");
     }
 
     private void OnEnable()

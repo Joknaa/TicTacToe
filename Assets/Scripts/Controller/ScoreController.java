@@ -17,7 +17,12 @@ public class ScoreController {
     int XWins;
     int OWins;
 
-    public GameStateModel CheckCurrentGameState(GameStateModel currentGameStateModel, PlayerModel PlayerModel, BoardModel gameBoardModel, TurnCounterModel Counter){
+    public GameStateModel CheckCurrentGameState(
+        GameStateModel currentGameStateModel, 
+        PlayerModel PlayerModel, 
+        BoardModel gameBoardModel, 
+        TurnCounterModel Counter
+        ){
         this.currentGameStateModel = currentGameStateModel;
         this.currentPlayerModel = PlayerModel;
         this.gameBoardModel = gameBoardModel;
@@ -25,20 +30,18 @@ public class ScoreController {
         Board = gameBoardModel.GetFullBoard();
         int PlayersTotalMoves;
 
-        CountWins();
 
+
+
+        CountWins();
         XMoves = PlayerModel.GetMoves(PlayerModel.X);
         OMoves = PlayerModel.GetMoves(PlayerModel.O);
         XWins  = PlayerModel.GetWins(PlayerModel.X);
         OWins  = PlayerModel.GetWins(PlayerModel.O);
-        PlayersTotalMoves = XMoves + OMoves;
 
-        if (XWins == 0 && OWins > 0){           currentGameStateModel = GameStateModel.O_Win;
+        if       (XWins == 0 && OWins >  0){    currentGameStateModel = GameStateModel.O_Win;
         } else if(XWins >  0 && OWins == 0){    currentGameStateModel = GameStateModel.X_Win;
         } else if(XWins == 0 && OWins == 0){
-            if(PlayersTotalMoves < 9){          currentGameStateModel = GameStateModel.Playing;
-            } else if (PlayersTotalMoves == 9){ currentGameStateModel = GameStateModel.Draw;
-            }
         }
         return currentGameStateModel;
     }
