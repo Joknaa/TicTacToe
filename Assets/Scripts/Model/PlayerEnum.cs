@@ -1,6 +1,6 @@
 ﻿namespace Model
 {
-    public enum PlayerModel
+    public enum PlayerEnum
     {
         X,
         O

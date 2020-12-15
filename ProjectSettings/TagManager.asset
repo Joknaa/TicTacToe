@@ -3,7 +3,34 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cell0
+  - Cell0X
+  - Cell0O
+  - Cell1
+  - Cell1X
+  - Cell1O
+  - Cell2
+  - Cell2X
+  - Cell2O
+  - Cell3
+  - Cell3X
+  - Cell3O
+  - Cell4
+  - Cell4X
+  - Cell4O
+  - Cell5
+  - Cell5X
+  - Cell5O
+  - Cell6
+  - Cell6X
+  - Cell6O
+  - Cell7
+  - Cell7X
+  - Cell7O
+  - Cell8
+  - Cell8X
+  - Cell8O
   layers:
   - Default
   - TransparentFX

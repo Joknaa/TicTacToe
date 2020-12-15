@@ -4,10 +4,12 @@ using UnityEngine;
 namespace View{
     public class InputView : MonoBehaviour
     {
+        public Signal signal;
         
         public void OnMouseDown()
         {
-            print("Yoo! you clicked me !! :D");
+            print("Input view : Clicked !! :D");
+            signal.Raise();
         }
     }
 }

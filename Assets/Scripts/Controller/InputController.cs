@@ -1,46 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 using Model;
 using UnityEngine;
+using View;
 
 namespace Controller
 {
     public class InputController : MonoBehaviour
     {
-        public GameObject X;
-        public GameObject O;
-        private PlayerModel CurrentPlayer;
-    
-        
-        // Start is called before the first frame update
+        public PlayerEnum CurrentPlayer;
+        public SwitchCellContentView SwitchCellContentViewScript;
+
         void Start()
         {
             print("Hey i started !");
-            CurrentPlayer = PlayerModel.X;
+            CurrentPlayer = PlayerEnum.X;
         }
 
         private void Update()
         {
-            CheckForClicks();
+            CheckCurrentPlayerInView();
         }
 
-        public void CheckForClicks()
+        private void CheckCurrentPlayerInView()
         {
-            print("Yoo! you clicked me !! :D");
-            switch (CurrentPlayer)
-            {
-                case PlayerModel.O:
-                    O.SetActive(true);
-                    X.SetActive(false);
-                    CurrentPlayer = PlayerModel.X;
-                    break;
-                case PlayerModel.X:
-                    X.SetActive(true);
-                    O.SetActive(false);
-                    CurrentPlayer = PlayerModel.O;
-                    break;
-                default:
-                    break;
-            }
+            SwitchCellContentViewScript.SetCurrentPlayer(CurrentPlayer == PlayerEnum.O ? 'O' : 'X');
         }
+
     }
 }

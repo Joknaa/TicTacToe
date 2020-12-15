@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3340016749325518403}
   - component: {fileID: 3340016749325518402}
   - component: {fileID: 3340016749325518405}
+  - component: {fileID: 1189492388281584920}
   m_Layer: 0
-  m_Name: Cell (0)
+  m_Name: Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,6 +71,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f76f314d0d9573440b5fc2e811019aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 4a1c41760c272fa4280057759a77a82b, type: 2}
+--- !u!114 &1189492388281584920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3340016749325518400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a885c01b2736c1f4f9c884ac9cd5e3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   X: {fileID: 3340016749697908005}
