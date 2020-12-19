@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de9f3655e6c419a8a256961c92b0fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CellIsFull: 0
+  CellIsEmpty: 1
