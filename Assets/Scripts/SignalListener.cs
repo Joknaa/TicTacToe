@@ -1,4 +1,4 @@
-﻿using System;
+﻿using _Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 

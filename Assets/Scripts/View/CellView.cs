@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using _Scripts.ScriptableObjects;
+using Model;
 using UnityEngine;
 
 namespace View

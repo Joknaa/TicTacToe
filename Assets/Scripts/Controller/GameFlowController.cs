@@ -1,12 +1,11 @@
 ﻿using Model;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using View;
 
 namespace Controller
 {
-    public class GameFlowController : MonoBehaviour
-    {
+    public class GameFlowController : MonoBehaviour {
         [Header("Models : ")]
         public GameObject boardModel;
         public GameObject playersModel;
@@ -35,6 +34,8 @@ namespace Controller
         }
 
         public void PlayTheGame(int cellID){
+            if (CurrentGameState == GameStateEnum.Pausing) return;
+            
             GetCurrentPlayer();
             if (UpdateCell(cellID))
             {
@@ -50,20 +51,17 @@ namespace Controller
             if (CurrentGameState == GameStateEnum.Playing) return;
             
             DisplayResult(CurrentGameState);
-            EndTheGame();
+            DisplayEndGameMenu();
         }
 
-        private void Update(){
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (!UIViewScript.pauseMenu.activeInHierarchy) {
-                    UIViewScript.DisplayPauseMenu();
-                    Time.timeScale = 0;    
-                } else {
-                    UIViewScript.HidePauseMenu();
-                    Time.timeScale = 1;
-                }
-                
+        private void Update() {
+            if (!Input.GetKeyDown(KeyCode.Escape)) return;
+            if (!UIViewScript.pauseMenu.activeInHierarchy) {
+                CurrentGameState = GameStateEnum.Pausing;
+                UIViewScript.DisplayPauseMenu();
+            } else {
+                CurrentGameState = GameStateEnum.Playing;
+                UIViewScript.HidePauseMenu();
             }
         }
 
@@ -107,9 +105,18 @@ namespace Controller
         private GameStateEnum CheckCurrentGameState(){
             return CurrentGameState = scoreControllerScript.CheckCurrentGameState(playersModel, CurrentPlayer);
         }
-
-        private void EndTheGame(){
+        
+        private void DisplayEndGameMenu() { // pausing for now ! will make it better later
+            CurrentGameState = GameStateEnum.Pausing;
+            UIViewScript.DisplayPauseMenu();
+        }
+        
+        public void EndTheGame(){
             Application.Quit();
+        }
+
+        public void PlayAgain() {
+            SceneManager.LoadScene(0);
         }
     }
 }
