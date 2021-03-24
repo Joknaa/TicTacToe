@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Scripts.ScriptableObjects {
+namespace ScriptableObjects {
     [CreateAssetMenu]
-    public class Signal : ScriptableObject
-    {
+    public class Signal : ScriptableObject {
         public List<SignalListener> Listeners = new List<SignalListener>();
     
         public void Raise()

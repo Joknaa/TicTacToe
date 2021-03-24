@@ -1,4 +1,4 @@
-﻿using _Scripts.ScriptableObjects;
+﻿using ScriptableObjects;
 using Model;
 using UnityEngine;
 
