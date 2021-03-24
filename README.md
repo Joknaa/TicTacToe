@@ -1,5 +1,7 @@
 # TicTacToe
 This is a game of TicTacToe, Made in Unity game engine, with C#, using some of the pixel art i attempted to create.
+<br>
+You can try it by downloading the game latest ![build](https://github.com/Joknaa/TicTacToe/blob/main/TicTacToeBuild001.rar)
 
 ## Game ScreenShots
 ### Starting Menu
